@@ -1,0 +1,100 @@
+body{
+    font-family: "Inter", sans-serif;
+}
+
+main{
+    width: 600px;
+    margin: 20% auto auto;
+}
+
+main button{
+    background: white;
+    border: 1px #0A3871 solid;
+    border-radius: 16px;
+    color: #0A3871;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    width: 40%;
+    
+}
+
+main button:hover{
+    font-weight: bold;
+}
+
+#inicio button{
+    display: block;
+}
+
+#inicio button:first-child{
+    background: #0A3871;
+    color: white;
+    height: 70px;
+    margin-bottom: 2em;
+    width: 45%;  
+}
+#agregarPalabra{
+    display: none;
+}
+
+#agregarPalabra input{
+    border: none;
+    display: block;
+    color: #0A3871;
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
+    margin-bottom: 5em;
+    outline: none;
+}
+#agregarPalabra input::placeholder{
+    color: #0A3871;
+}
+
+#agregarPalabra p{
+    color: #495057;
+    font-size: 12px;
+    text-align: left;
+}
+
+#agregarPalabra p::before{
+    content: url(image/alertIcon.png);
+    vertical-align: middle;
+}
+#agregarPalabra button:nth-child(2){
+    background: #0A3871;
+    color: white;
+}
+
+#juego{
+    display: none;
+}
+#juego button:nth-child(1){
+    background: #0A3871;
+    color: white;
+}
+#juego .botones{
+    text-align: center;
+}
+
+.botones{
+    display: block;
+}
+
+footer{
+    font-size: 12px;
+    margin: 4em auto auto;
+    width: 130px;
+    text-align: center;
+    
+}
+footer img{
+    width: 32px;
+    height: 32px;
+}
+
+

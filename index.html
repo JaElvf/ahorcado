@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Ahorcado</title>
+    </head>
+    <body>
+        <main>
+            <section id="inicio">
+                <button onclick="principal()">Iniciar juego</button>
+                <button onclick="nuevaPalabra()">Agregar nueva palabra</button>
+            </section>
+            <section id="agregarPalabra">
+                <input type="text" placeholder="Ingrese una palabra">
+                <div class="botones">
+                    <p>Máx. de 8 letras</p>
+                    <button>Guardar y Empezar</button>
+                    <button onclick="inicio()">Cancelar</button>
+                </div>
+            </section>
+            <section id="juego">
+                <canvas width="600" height="400"></canvas>
+                <div class="botones">
+                    <button>Nuevo juego</button>
+                    <button onclick="inicio()">Desistir</button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <a href="https://www.linkedin.com/in/JaElvf" target="_blank"><img src="image/linkedinIcon.png" alt="Linkedin"></a>
+            <a href="https://github.com/JaElvf" target="_blank"><img src="image/githubIcon.png" alt="Github"></a>
+            <a href="https://twitter.com/JaElvf" target="_blank"><img src="image/twitterIcon.png" alt="Twitter"></a> 
+            <p>By Javier Valdez</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
