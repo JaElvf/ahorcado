@@ -4,7 +4,7 @@ body{
 
 main{
     width: 600px;
-    margin: 20% auto auto;
+    margin: 1% auto auto;
 }
 
 main button{
@@ -27,6 +27,11 @@ main button:hover{
     font-weight: bold;
 }
 
+#inicio{
+    display: block;
+    margin-top: 50%;
+}
+
 #inicio button{
     display: block;
 }
@@ -40,6 +45,7 @@ main button:hover{
 }
 #agregarPalabra{
     display: none;
+    margin-top: 50%;
 }
 
 #agregarPalabra input{
