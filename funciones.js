@@ -1,0 +1,92 @@
+function comprobacionLetraUsada(letra){
+    for(let i = 0; i < letrasUsadas.length; i++){
+        if(letra == letrasUsadas[i]){
+            return true;
+        }
+    }
+    return false;
+}
+function comprobacionLetra(letra) {
+    if((letra > 64 && letra < 91) || letra == 192){
+        if(!comprobacionLetraUsada(letra)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    else{
+        return false;
+    }
+}
+function generarPalabraSecreta(palabras){
+    indice = Math.floor(Math.random() * palabras.length);
+    return indice;
+}
+
+function iniciar(){
+    pincel.clearRect(0,0,ancho,alto);
+    numeroErrores = 0;
+    numeroAciertos = 0;
+    letrasUsadas = [];
+    dibujarHorca();
+    palabraSecreta = palabras[generarPalabraSecreta(palabras)];
+    dibujarEspacios(palabraSecreta.length);
+    start = true;
+    window.onkeydown = jugar;
+ }
+
+ function jugar(keyboardEvent) {
+    let letra = keyboardEvent.keyCode;
+    let coincidencia = 0;
+    if(start){
+        if(numeroErrores<9){
+            if(numeroAciertos < palabraSecreta.length){
+                if(comprobacionLetra(letra)){
+                    for (let i = 0; i < palabraSecreta.length; i++) {
+                        if(palabraSecreta.charCodeAt(i) == letra){
+                            coincidencia++;
+                            if(letra == 192){
+                                dibujarLetraCorrecta('Ñ',i);
+                            }
+                            else{
+                                dibujarLetraCorrecta(String.fromCharCode(letra), i);
+                            }
+                        }                    
+                    }
+                    if(coincidencia == 0){
+                        if(letra == 192){
+                            dibujarLetraIncorrecta('Ñ', numeroErrores);
+                        }
+                        else{
+                            dibujarLetraIncorrecta(String.fromCharCode(letra), numeroErrores);
+                        }
+                        letrasUsadas[letrasUsadas.length] = letra;
+                        numeroErrores++;
+                        dibujarHorca(numeroErrores);
+                        if(numeroErrores == 9){
+                            mensaje(false);
+                            start = false;
+                        }
+                    }
+                    else{
+                        numeroAciertos+=coincidencia;
+                        if(numeroAciertos == palabraSecreta.length){
+                            mensaje(true);
+                            start = false;
+                        }
+                        letrasUsadas[letrasUsadas.length] = letra;
+                    }
+                }
+            }
+            else{
+                mensaje(true);
+                start = false;
+            }
+        }
+        else{
+            mensaje(false);
+            start = false;
+        }
+    }
+ }
