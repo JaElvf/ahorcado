@@ -139,7 +139,7 @@ function iniciar(){
         if(compararPalabra(texto)){
             palabras[palabras.length] = texto;
             document.getElementById("nuevaPalabra").value = "";
-            iniciar();
+            principal();
         }
         else{
             alert("Esa palabra ya esta agregada");
