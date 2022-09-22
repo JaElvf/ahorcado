@@ -26,10 +26,10 @@
                 <button onclick="nuevaPalabra()">Agregar nueva palabra</button>
             </section>
             <section id="agregarPalabra">
-                <input type="text" placeholder="Ingrese una palabra">
+                <input type="text" id="nuevaPalabra" placeholder="Ingrese una palabra" autocomplete="off" autofocus>
                 <div class="botones">
                     <p>Máx. de 8 letras</p>
-                    <button>Guardar y Empezar</button>
+                    <button onclick="agregarPalabraSecreta()">Guardar y Empezar</button>
                     <button onclick="inicio()">Cancelar</button>
                 </div>
             </section>

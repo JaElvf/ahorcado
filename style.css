@@ -11,7 +11,9 @@ header{
     top: 5%;
     width: 70px;
 }
-
+#conf{
+    display: none;
+}
 #conf button{
     background: transparent;
     border: none;
@@ -119,9 +121,10 @@ main button:hover{
 }
 
 footer{
+    border: 1px red solid;
     font-size: 12px;
-    margin: 4em auto auto;
-    width: 130px;
+    margin: 0 auto;
+    padding-top: 40px;
     text-align: center;
     
 }

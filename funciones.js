@@ -1,3 +1,11 @@
+function compararPalabra(palabraNueva) {
+    for (let i = 0; i < palabras.length; i++) {
+        if(palabras[i] == palabraNueva){
+            return false;
+        }        
+    }
+    return true;
+}
 function comprobacionLetraUsada(letra){
     for(let i = 0; i < letrasUsadas.length; i++){
         if(letra == letrasUsadas[i]){
@@ -6,6 +14,7 @@ function comprobacionLetraUsada(letra){
     }
     return false;
 }
+
 function comprobacionLetra(letra) {
     if((letra > 64 && letra < 91) || letra == 192){
         if(!comprobacionLetraUsada(letra)){
@@ -19,6 +28,7 @@ function comprobacionLetra(letra) {
         return false;
     }
 }
+
 function generarPalabraSecreta(palabras){
     indice = Math.floor(Math.random() * palabras.length);
     return indice;
@@ -88,5 +98,42 @@ function iniciar(){
             mensaje(false);
             start = false;
         }
+    }
+ }
+
+ function comprobacionNuevaPalabra(palabra) {
+    let coincidencia = 0;
+    if(palabra.length<9){
+            for(let i = 0; i < palabra.length; i++){
+                if(comprobacionLetra(palabra.charCodeAt(i))){
+                    coincidencia++;
+                }
+            }
+            if(coincidencia == palabra.length){
+                return true;
+            }
+            else{
+                return false;
+            }
+    }
+    else{
+        return false;
+    }
+ }
+
+ function agregarPalabraSecreta(){
+    let texto = document.getElementById("nuevaPalabra").value.toUpperCase();
+    if(comprobacionNuevaPalabra(texto)){
+        if(compararPalabra(texto)){
+            palabras[palabras.length] = texto;
+            document.getElementById("nuevaPalabra").value = "";
+            //iniciar();
+        }
+        else{
+            alert("Esa palabra ya esta agregada");
+        }
+    }
+    else{
+        alert("Solo una palabra de 8 letras, sin signos especiales");
     }
  }
