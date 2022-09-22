@@ -44,10 +44,22 @@ function iniciar(){
     dibujarEspacios(palabraSecreta.length);
     start = true;
     window.onkeydown = jugar;
+    if(activarTeclado()){
+        document.getElementById("teclado").style.display = "table";
+    }
+    else{
+        document.getElementById("teclado").style.display="none";
+    }
  }
 
- function jugar(keyboardEvent) {
-    let letra = keyboardEvent.keyCode;
+ function jugar(event) {
+    let letra;
+    if(event < 91){
+        letra = event;
+    }
+    else{
+        letra = event.keyCode;
+    }
     let coincidencia = 0;
     if(start){
         if(numeroErrores<9){
@@ -135,5 +147,19 @@ function iniciar(){
     }
     else{
         alert("Solo una palabra de 8 letras, sin signos especiales");
+    }
+ }
+
+ function presionarTecla(tecla){
+    jugar(tecla.value.charCodeAt(0));
+ }
+
+ function activarTeclado(){
+    let navegador = navigator.userAgent;
+    if(navegador.match(/Android/i) || navegador.match(/webOS/i) || navegador.match(/iPhone/i) || navegador.match(/iPad/i) || navegador.match(/iPod/i) || navegador.match(/BlackBerry/i) || navegador.match(/Windows Phone/i)) {
+        return true;
+    } 
+    else{
+        return false;
     }
  }

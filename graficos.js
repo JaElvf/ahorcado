@@ -112,20 +112,20 @@ function dibujarLinea(ix,iy,fx,fy,color) {
  function dibujarLetraCorrecta(letra,posicion){
    let puntoInicial = 0.1;
    let cantidad = palabraSecreta.length;
-   let altura = alto*0.84;
+   let altura = alto*0.83;
    let color = "#0A3871";
    if(cantidad % 2 == 0){
       for(let i = cantidad/2; i < 4;i++){
          puntoInicial+=0.1;
       }
-      dibujarLetra(letra,(ancho * puntoInicial) + ((ancho * 0.1) * posicion),alto * 0.83,"3em 'Inter', sans-seri",color);
+      dibujarLetra(letra,(ancho * puntoInicial) + ((ancho * 0.1) * posicion),altura,"3em 'Inter', sans-seri",color);
    }
    else{
       puntoInicial = 0.055;
       for(let i = cantidad/2; i < 4;i++){
          puntoInicial+=0.1;
       }
-      dibujarLetra(letra,(ancho * puntoInicial) + ((ancho * 0.1) * posicion),alto * 0.83,"3em 'Inter', sans-seri",color);
+      dibujarLetra(letra,(ancho * puntoInicial) + ((ancho * 0.1) * posicion),altura,"3em 'Inter', sans-seri",color);
    }   
  }
 
